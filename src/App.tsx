@@ -7,6 +7,9 @@ const theme = createTheme({
       main: '#1976d2',
     },
   },
+  typography: {
+    fontFamily: 'Mona Sans, sans-serif',
+  },
 });
 
 function App() {

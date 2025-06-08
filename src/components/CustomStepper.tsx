@@ -124,7 +124,7 @@ const CustomStepper: React.FC<CustomStepperProps> = ({ activeStep, setActiveStep
             <Typography variant='caption' color="text.secondary" >
               {`Step ${index + 1}`}
             </Typography>
-            <Typography variant='body2' color="text.primary" fontWeight={600} style={{ marginTop: '4px', color: index > activeStep ? '#959796' : '#121715' }}>
+            <Typography variant='body2' color="text.primary" fontWeight={600} style={{ marginTop: '4px', color: index != activeStep ? '#959796' : '#121715' }}>
               {label}
             </Typography>
             <Chip variant={index > activeStep ? 'outlined' : 'filled'} label={activeStep === index ? 'In Progress' : index > activeStep ? 'Pending' : 'Completed'} 
@@ -133,7 +133,7 @@ const CustomStepper: React.FC<CustomStepperProps> = ({ activeStep, setActiveStep
                color: activeStep === index ? '#493aaf' : index > activeStep ?   '#d8d8d8' : '#1abe73',
                padding: '0px 6px',
                fontSize: '12px',
-               marginTop: '10px',
+               marginTop: '12px',
                borderColor: index > activeStep ? '#e7e7e7' : 'none',
                fontWeight: 600
               }}
