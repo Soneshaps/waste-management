@@ -1,5 +1,5 @@
-import ChooseSkip from './pages/ChooseSkip'
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
+import ChooseSkip from './pages/ChooseSkip';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 const theme = createTheme({
   palette: {
@@ -16,9 +16,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <ChooseSkip />
+      <div className="min-h-screen bg-bottom-to-top">
+        <ChooseSkip />
+      </div>
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -10,6 +10,9 @@ export default {
         mona: ['"Mona Sans"', 'sans-serif'],
         sans: ['"Mona Sans"', 'sans-serif'], // optional: make it default
       },
+      backgroundImage: {
+        'bottom-to-top': 'linear-gradient(to top, #bdbdbd, #ffffff)',
+      },
     },
   },
   plugins: [],
