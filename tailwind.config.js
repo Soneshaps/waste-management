@@ -11,7 +11,7 @@ export default {
         sans: ['"Mona Sans"', 'sans-serif'], // optional: make it default
       },
       backgroundImage: {
-        'bottom-to-top': 'linear-gradient(to top, #bdbdbd, #ffffff)',
+        'bottom-to-top': 'linear-gradient(to top, #f4f7fb, #ffffff)',
       },
     },
   },
