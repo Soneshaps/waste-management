@@ -1,4 +1,4 @@
-import ChooseSkip from './pages/ChooseSkip';
+import MainPage from './pages';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
 const theme = createTheme({
@@ -16,9 +16,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="min-h-screen bg-bottom-to-top">
-        <ChooseSkip />
-      </div>
+      <MainPage />
     </ThemeProvider>
   );
 }
