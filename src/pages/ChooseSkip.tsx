@@ -9,11 +9,9 @@ const ChooseSkip: React.FC = () => {
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
   const { data: skips } = useSkips('NR32', 'Lowestoft');
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-
   const scrollToBottom = () => {
-    scrollRef.current?.scrollTo({
-      top: scrollRef.current.scrollHeight,
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
       behavior: 'smooth',
     });
   };
@@ -23,7 +21,7 @@ const ChooseSkip: React.FC = () => {
   }, [selectedSkip]);
 
   return (
-    <div ref={scrollRef} className="max-w-[1000px] mx-auto px-8 pb-24 overflow-y-auto">
+    <div className="max-w-[1000px] mx-auto px-8 pb-24">
       <Title
         title="Choose Skip Size"
         description="Select the skip size that best suits your needs"
