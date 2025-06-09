@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CustomStepper from '../components/CustomStepper';
+import ProgressMobileStepper from '../components/CustomMobileStepper';
 
 const skipSizes = [
   {
@@ -45,7 +46,7 @@ const skipSizes = [
 ];
 
 const ChooseSkip: React.FC = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(2);
   const [selectedSkip, setSelectedSkip] = useState<{ id: number; size: string } | null>(null);
 
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -63,18 +64,25 @@ const ChooseSkip: React.FC = () => {
 
   return (
     <div className="max-w-[1200px] mx-auto">
+      {/* Desktop */}
       <div
-        className="bg-white hidden sticky top-0 z-1 md:block"
+        className="bg-top-to-bottom hidden sticky top-0 z-1 md:block"
         style={{ paddingTop: '24px', paddingBottom: '24px' }}
       >
         <CustomStepper activeStep={activeStep} setActiveStep={setActiveStep} />
       </div>
 
+      {/* Mobile */}
+      <div className="bg-top-to-bottom block md:hidden pt-6 sticky top-0 z-1">
+        <ProgressMobileStepper activeStep={activeStep} />
+      </div>
+
+      {/* Content */}
       <div
         ref={scrollRef}
-        className="max-w-[1000px] mx-auto px-8 overflow-y-auto h-[100vh] md:h-[calc(100vh-195px)]"
+        className="max-w-[1000px] mx-auto px-8 overflow-y-auto h-[calc(100vh-116px)] md:h-full"
       >
-        <div className="flex md:justify-center my-12">
+        <div className="flex md:justify-center my-6 md:my-12">
           <div className="flex flex-col md:items-center">
             <div className="text-2xl font-semibold">Choose Skip Size</div>
             <div className="text-base text-gray-500 mt-4">
@@ -139,10 +147,16 @@ const ChooseSkip: React.FC = () => {
           </div>
         </div>
         <div className=" grid grid-cols-2 gap-4 pt-8 pb-4">
-          <button className="border border-2 border-gray-300 text-base text-gray-300 px-6 py-2 rounded-md  mt-4 font-medium hover:bg-gray-300 hover:text-white transition-all duration-300">
+          <button
+            onClick={() => setActiveStep(activeStep - 1)}
+            className="border border-2 border-gray-300 text-base text-gray-300 px-6 py-2 rounded-md  mt-4 font-medium hover:bg-gray-300 hover:text-white transition-all duration-300"
+          >
             Previous
           </button>
-          <button className="border border-2 border-[#4645cb] text-base text-white px-6 py-2 rounded-md  mt-4 font-medium bg-[#4645cb] hover:text-white transition-all duration-300">
+          <button
+            onClick={() => setActiveStep(activeStep + 1)}
+            className="border border-2 border-[#4645cb] text-base text-white px-6 py-2 rounded-md  mt-4 font-medium bg-[#4645cb] hover:text-white transition-all duration-300"
+          >
             Next
           </button>
         </div>

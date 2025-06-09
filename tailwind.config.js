@@ -12,6 +12,7 @@ export default {
       },
       backgroundImage: {
         'bottom-to-top': 'linear-gradient(to top, #f4f7fb, #ffffff)',
+        'top-to-bottom': 'linear-gradient(to bottom, #ffffff, #fcfeff)',
       },
     },
     screens: {
