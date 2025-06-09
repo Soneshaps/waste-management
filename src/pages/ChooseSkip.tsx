@@ -1,53 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CustomStepper from '../components/CustomStepper';
 import ProgressMobileStepper from '../components/CustomMobileStepper';
-
-const skipSizes = [
-  {
-    id: 1,
-    size: '4 Yards',
-  },
-  {
-    id: 2,
-    size: '5 Yards',
-  },
-  {
-    id: 3,
-    size: '6 Yards',
-  },
-  {
-    id: 4,
-    size: '8 Yards',
-  },
-  {
-    id: 5,
-    size: '10 Yards',
-  },
-  {
-    id: 6,
-    size: '12 Yards',
-  },
-  {
-    id: 7,
-    size: '14 Yards',
-  },
-  {
-    id: 8,
-    size: '16 Yards',
-  },
-  {
-    id: 9,
-    size: '20 Yards',
-  },
-  {
-    id: 10,
-    size: '40 Yards',
-  },
-];
+import { useSkips } from '../hooks/useSkips';
+import type { Skip } from '../services/skipService';
 
 const ChooseSkip: React.FC = () => {
   const [activeStep, setActiveStep] = useState(2);
-  const [selectedSkip, setSelectedSkip] = useState<{ id: number; size: string } | null>(null);
+  const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
+  const { data: skips } = useSkips('NR32', 'Lowestoft');
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -94,58 +54,63 @@ const ChooseSkip: React.FC = () => {
         <div className="text-base pb-4">Select skip size</div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 text-sm pb-8">
-          {skipSizes.map((skip) => (
+          {skips?.map((skip: Skip) => (
             <div
               key={skip.id}
               className={`font-medium cursor-pointer border border-gray-300 rounded-md p-2 text-center ${selectedSkip?.id === skip.id ? 'bg-[#4645cb] text-white border-0' : ''}`}
               onClick={() => setSelectedSkip(skip)}
             >
-              {skip.size}
+              {skip.size} Yards
             </div>
           ))}
         </div>
 
-        <div className=" flex flex-col md:flex-row bg-[#f9f9f9] rounded-lg shadow-sm p-4 gap-6 shdaow-lg">
-          <div className="border bg-[#ffffff] border-4 w-full md:w-[300px] border-[#f4c300] rounded-md shadow-sm">
-            <img
-              src={'/images/4-yards-skip.jpg'}
-              alt="skip"
-              className="w-full md:w-[300px] h-[221px] object-contain md:object-cover rounded-md"
-            />
-          </div>
+        {selectedSkip && (
+          <div className=" flex flex-col md:flex-row bg-[#f9f9f9] rounded-lg shadow-sm p-4 gap-6 shdaow-lg">
+            <div className="border bg-[#ffffff] border-4 w-full md:w-[300px] border-[#f4c300] rounded-md shadow-sm">
+              <img
+                src={'/images/4-yards-skip.jpg'}
+                alt="skip"
+                className="w-full md:w-[300px] h-[221px] object-contain md:object-cover rounded-md"
+              />
+            </div>
 
-          <div className="flex flex-col gap-1 flex-1">
-            <div className="text-2xl font-medium">4 Yard Skip</div>
-            <div className="text-lg font-medium text-gray-500">&#163;278.00</div>
-            <hr className="border-gray-200" />
-            <div className="text-base text-gray-500 pt-2 flex flex-col gap-1">
-              <div className="flex justify-between">
-                <div className="font-medium">Dimensions</div>
-                <div>12' x 8' x 4'</div>
+            <div className="flex flex-col gap-1 flex-1">
+              <div className="text-2xl font-medium">{selectedSkip.size} Yard Skip</div>
+              <div className="text-lg font-medium text-gray-500">
+                &#163;{selectedSkip.price_before_vat}
               </div>
-              <div className="flex justify-between">
-                <div className="font-medium">Capacity</div>
-                <div>35 to 40 bin bags</div>
-              </div>
-              <div className="flex justify-between">
-                <div className="font-medium">Hire Period</div>
-                <div>7 Days</div>
-              </div>
-              <div className="flex justify-between">
-                <div className="font-medium">Allow Heavy Waste</div>
-                <div>Yes</div>
-              </div>
-              <div className="flex justify-between">
-                <div className="font-medium">Delivery</div>
-                <div>&#163;100.00</div>
-              </div>
-              <div className="flex justify-between">
-                <div className="font-medium">Allow in Road</div>
-                <div>Yes</div>
+              <hr className="border-gray-200" />
+              <div className="text-base text-gray-500 pt-2 flex flex-col gap-1">
+                <div className="flex justify-between">
+                  <div className="font-medium">Dimensions</div>
+                  <div>12' x 8' x 4'</div>
+                </div>
+                <div className="flex justify-between">
+                  <div className="font-medium">Capacity</div>
+                  <div>35 to 40 bin bags</div>
+                </div>
+                <div className="flex justify-between">
+                  <div className="font-medium">Hire Period</div>
+                  <div>{selectedSkip.hire_period_days} Days</div>
+                </div>
+                <div className="flex justify-between">
+                  <div className="font-medium">Allow Heavy Waste</div>
+                  <div>{selectedSkip.allows_heavy_waste ? 'Yes' : 'No'}</div>
+                </div>
+                <div className="flex justify-between">
+                  <div className="font-medium">Delivery</div>
+                  <div>&#163;{selectedSkip.transport_cost ?? 0}</div>
+                </div>
+                <div className="flex justify-between">
+                  <div className="font-medium">Allow in Road</div>
+                  <div>{selectedSkip.allowed_on_road ? 'Yes' : 'No'}</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
+
         <div className=" grid grid-cols-2 gap-4 pt-8 pb-4">
           <button
             onClick={() => setActiveStep(activeStep - 1)}
@@ -153,12 +118,14 @@ const ChooseSkip: React.FC = () => {
           >
             Previous
           </button>
-          <button
-            onClick={() => setActiveStep(activeStep + 1)}
-            className="border border-2 border-[#4645cb] text-base text-white px-6 py-2 rounded-md  mt-4 font-medium bg-[#4645cb] hover:text-white transition-all duration-300"
-          >
-            Next
-          </button>
+          {selectedSkip && (
+            <button
+              onClick={() => setActiveStep(activeStep + 1)}
+              className="border border-2 border-[#4645cb] text-base text-white px-6 py-2 rounded-md  mt-4 font-medium bg-[#4645cb] hover:text-white transition-all duration-300"
+            >
+              Next
+            </button>
+          )}
         </div>
       </div>
     </div>
