@@ -1,8 +1,13 @@
+import Title from '../components/title';
+
 const ChooseDate = () => {
   return (
-    <div>
-      <h1>Choose Date</h1>
-    </div>
+    <>
+      <Title
+        title="When do you need the skip?"
+        description="Select the date and time that best suits your needs"
+      />
+    </>
   );
 };
 

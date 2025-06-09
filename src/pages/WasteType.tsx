@@ -1,8 +1,13 @@
+import Title from '../components/title';
+
 const WasteType = () => {
   return (
-    <div>
-      <h1>Waste Type</h1>
-    </div>
+    <>
+      <Title
+        title="What type of waste do you need to dispose?"
+        description="Select the waste type that best suits your needs"
+      />
+    </>
   );
 };
 

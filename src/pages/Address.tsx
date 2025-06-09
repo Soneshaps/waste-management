@@ -1,8 +1,13 @@
+import Title from '../components/title';
+
 const Address = () => {
   return (
-    <div>
-      <h1>Address</h1>
-    </div>
+    <>
+      <Title
+        title="Where do you need the skip?"
+        description="Enter your address to find the nearest skip"
+      />
+    </>
   );
 };
 

@@ -1,13 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSkips } from '../hooks/useSkips';
 import type { Skip } from '../services/skipService';
 import Title from '../components/title';
 import SelectSkipInput from '../components/select-skip-input';
 import SkipDetail from '../components/skip-detail';
+import Loader from '../components/loader';
 
 const ChooseSkip: React.FC = () => {
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
-  const { data: skips } = useSkips('NR32', 'Lowestoft');
+  const { data: skips, isLoading } = useSkips('NR32', 'Lowestoft');
 
   const scrollToBottom = () => {
     window.scrollTo({
@@ -21,20 +22,25 @@ const ChooseSkip: React.FC = () => {
   }, [selectedSkip]);
 
   return (
-    <div className="max-w-[1000px] mx-auto px-8 pb-24">
+    <>
       <Title
         title="Choose Skip Size"
         description="Select the skip size that best suits your needs"
       />
 
-      <SelectSkipInput
-        skips={skips ?? []}
-        selectedSkip={selectedSkip}
-        setSelectedSkip={setSelectedSkip}
-      />
-
-      {selectedSkip && <SkipDetail selectedSkip={selectedSkip} />}
-    </div>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <SelectSkipInput
+            skips={skips ?? []}
+            selectedSkip={selectedSkip}
+            setSelectedSkip={setSelectedSkip}
+          />
+          {selectedSkip && <SkipDetail selectedSkip={selectedSkip} />}
+        </>
+      )}
+    </>
   );
 };
 

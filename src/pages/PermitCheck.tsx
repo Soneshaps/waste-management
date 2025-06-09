@@ -1,8 +1,13 @@
+import Title from '../components/title';
+
 const PermitCheck = () => {
   return (
-    <div>
-      <h1>Permit Check</h1>
-    </div>
+    <>
+      <Title
+        title="Do you have a permit?"
+        description="Select the permit that best suits your needs"
+      />
+    </>
   );
 };
 

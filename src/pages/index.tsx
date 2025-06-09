@@ -34,10 +34,12 @@ const MainPage: React.FC = () => {
           <ProgressMobileStepper activeStep={activeStep} />
         </div>
 
-        {activeStepToComponentMap[activeStep as keyof typeof activeStepToComponentMap]}
+        <div className="max-w-[1000px] mx-auto px-8 pb-24">
+          {activeStepToComponentMap[activeStep as keyof typeof activeStepToComponentMap]}
+        </div>
 
         {/* Next and Previous Buttons */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#f9f9f9] shadow-xl">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#f9fafd] shadow-xl">
           <div className="max-w-[1000px] mx-auto px-8 grid grid-cols-2 gap-4 pt-2 pb-4">
             <CustomButton onClick={() => setActiveStep(activeStep - 1)} variant="secondary">
               Previous
