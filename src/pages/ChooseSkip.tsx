@@ -4,6 +4,30 @@ import ProgressMobileStepper from '../components/CustomMobileStepper';
 import { useSkips } from '../hooks/useSkips';
 import type { Skip } from '../services/skipService';
 
+const SkipSizeToImageMap = {
+  4: '/images/4-yard-skip.jpg',
+  6: '/images/6-yard-skip.jpg',
+  8: '/images/8-yard-skip.jpg',
+  10: '/images/10-yard-skip.jpg',
+  12: '/images/12-yard-skip.jpg',
+  14: '/images/14-yard-skip.jpg',
+  16: '/images/16-yard-skip.jpg',
+  20: '/images/20-yard-skip.jpg',
+  40: '/images/40-yard-skip.jpg',
+};
+
+const SkipSizeToDimensionMap = {
+  4: '1.8m X 1.3m X 0.9m',
+  6: '2.6m X 1.7m X 1m',
+  8: '3.6m X 1.7m X 1.2m',
+  10: '3.6m X 1.8m X 1.5m',
+  12: '3.7m X 1.7m X 1.8m',
+  14: '3.9m X 1.8m X 1.9m',
+  16: '4.1m X 1.9m X 2.1m',
+  20: '6.1m X 2.4m X 1.07m',
+  40: '8.1m X 3.1m X 2.2m',
+};
+
 const ChooseSkip: React.FC = () => {
   const [activeStep, setActiveStep] = useState(2);
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
@@ -67,24 +91,26 @@ const ChooseSkip: React.FC = () => {
 
         {selectedSkip && (
           <div className=" flex flex-col md:flex-row bg-[#f9f9f9] rounded-lg shadow-sm p-4 gap-6 shdaow-lg">
-            <div className="border bg-[#ffffff] border-4 w-full md:w-[300px] border-[#f4c300] rounded-md shadow-sm">
+            <div className="flex justify-center items-center border bg-[#ffffff] border-4 w-full md:w-[350px] border-[#f4c300] rounded-md shadow-sm">
               <img
-                src={'/images/4-yards-skip.jpg'}
+                src={SkipSizeToImageMap[selectedSkip.size as keyof typeof SkipSizeToImageMap]}
                 alt="skip"
                 className="w-full md:w-[300px] h-[221px] object-contain md:object-cover rounded-md"
               />
             </div>
 
             <div className="flex flex-col gap-1 flex-1">
-              <div className="text-2xl font-medium">{selectedSkip.size} Yard Skip</div>
+              <div className="text-xl font-medium">{selectedSkip.size} Yard Skip</div>
               <div className="text-lg font-medium text-gray-500">
                 &#163;{selectedSkip.price_before_vat}
               </div>
               <hr className="border-gray-200" />
-              <div className="text-base text-gray-500 pt-2 flex flex-col gap-1">
+              <div className="text-sm  text-gray-500 pt-2 flex flex-col gap-2">
                 <div className="flex justify-between">
                   <div className="font-medium">Dimensions</div>
-                  <div>12' x 8' x 4'</div>
+                  <div>
+                    {SkipSizeToDimensionMap[selectedSkip.size as keyof typeof SkipSizeToImageMap]}
+                  </div>
                 </div>
                 <div className="flex justify-between">
                   <div className="font-medium">Capacity</div>
@@ -111,17 +137,17 @@ const ChooseSkip: React.FC = () => {
           </div>
         )}
 
-        <div className=" grid grid-cols-2 gap-4 pt-8 pb-4">
+        <div className=" grid grid-cols-2 gap-4 pt-2 pb-4">
           <button
             onClick={() => setActiveStep(activeStep - 1)}
-            className="border border-2 border-gray-300 text-base text-gray-300 px-6 py-2 rounded-md  mt-4 font-medium hover:bg-gray-300 hover:text-white transition-all duration-300"
+            className="border border-2 border-gray-300 text-sm text-gray-300 px-6 py-2 rounded-md  mt-4 font-medium hover:bg-gray-300 hover:text-white transition-all duration-300"
           >
             Previous
           </button>
           {selectedSkip && (
             <button
               onClick={() => setActiveStep(activeStep + 1)}
-              className="border border-2 border-[#4645cb] text-base text-white px-6 py-2 rounded-md  mt-4 font-medium bg-[#4645cb] hover:text-white transition-all duration-300"
+              className="border border-2 border-[#4645cb] text-sm text-white px-6 py-2 rounded-md  mt-4 font-medium bg-[#4645cb] hover:text-white transition-all duration-300"
             >
               Next
             </button>
