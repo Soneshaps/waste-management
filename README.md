@@ -10,12 +10,12 @@ Sandbox URL for the application: [Rem-Waste Sandbox URL](https://codesandbox.io/
 
 ### Desktop View
 
-[[Watch Demo Video for Webpage]](https://vimeo.com/1092162788)
+[Watch Demo Video for Webpage](https://vimeo.com/1092162788)
 _Clean and intuitive interface for desktop users_
 
 ### Mobile View
 
-[[Watch Demo Video for Mobile]](https://vimeo.com/1092162839/dd33e44484)
+[Watch Demo Video for Mobile](https://vimeo.com/1092162839/dd33e44484)
 _Responsive design optimized for mobile devices_
 
 ### Key Features Showcase
@@ -28,18 +28,18 @@ _Interactive skip size selection with detailed information_
 #### 2. Skip Details
 
 ![Skip Details](https://i.imgur.com/7ZUYrmt.png)
-_Skip detail Sectio_
+_Detailed view of selected skip specifications_
 
 #### 3. Validation
 
-![Skip Validaton](https://i.imgur.com/7xwF0DK.png)
-_Skip detail Sectio_
+![Skip Validation](https://i.imgur.com/7xwF0DK.png)
+_Form validation and error handling_
 
-#### 3. Responsive Design
+#### 4. Responsive Design
 
-![Responsive Design](https://i.imgur.com/nZEfA8R.png)
-![Responsive Design](https://i.imgur.com/13dREyb.png)
-![Responsive Design](https://i.imgur.com/v3JFWky.png)
+![Responsive Design - Desktop](https://i.imgur.com/nZEfA8R.png)
+![Responsive Design - Tablet](https://i.imgur.com/13dREyb.png)
+![Responsive Design - Mobile](https://i.imgur.com/v3JFWky.png)
 _Seamless experience across all devices_
 
 ## ✨ Features
@@ -225,4 +225,4 @@ The project maintains a high test coverage with:
 
 ## 📧 Contact
 
-[sonesh.aps@gmail.com]
+For any inquiries, please contact: [sonesh.aps@gmail.com](mailto:sonesh.aps@gmail.com)
