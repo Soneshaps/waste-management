@@ -19,7 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   const variantClasses =
     variant === 'primary'
       ? 'bg-[#4645cb] border-2 border-[#4645cb] text-white hover:bg-[#ffffff] hover:text-[#4645cb]'
-      : 'border-2 border-gray-300 text-gray-300 hover:bg-gray-300 hover:text-white';
+      : 'border-2 border-[#878796] text-[#191818de] hover:bg-[#878796] hover:text-white';
 
   return (
     <button
