@@ -4,7 +4,37 @@ A modern web application for efficient waste management and skip hire services. 
 
 ## 🎥 Demo
 
-[Add your demo video or screenshots here]
+### Sandbox URL
+
+Sandbox URL for the application: [Rem-Waste Sandbox URL](https://codesandbox.io/p/github/Soneshaps/waste-management/main)
+
+### Desktop View
+
+[[Watch Demo Video for Webpage]](https://vimeo.com/1092041247)
+_Clean and intuitive interface for desktop users_
+
+### Mobile View
+
+[[Watch Demo Video for Mobile]](https://vimeo.com/1092041247)
+_Responsive design optimized for mobile devices_
+
+### Key Features Showcase
+
+#### 1. Skip Selection
+
+![Skip Selection](https://i.imgur.com/cSNNDKs.png)
+_Interactive skip size selection with detailed information_
+
+#### 2. Skip Details
+
+![Skip Details](https://i.imgur.com/2NMoJ5o.png)
+_Skip detail Sectio_
+
+#### 3. Responsive Design
+
+![Responsive Design](https://i.imgur.com/tcPMc6l.png)
+![Responsive Design](https://i.imgur.com/Me8Bguq.png)
+_Seamless experience across all devices_
 
 ## ✨ Features
 
@@ -110,9 +140,82 @@ npm run build
 yarn build
 ```
 
-## 📝 License
+## 🧪 Testing
 
-[Add your license information here]
+### Test Setup
+
+This project uses Vitest for testing, which provides a fast and modern testing experience. The test configuration includes:
+
+- **Test Environment**: JSDOM for browser environment simulation
+- **Coverage Provider**: V8 for accurate code coverage reporting
+- **Test Location**: Tests are located in `src/__tests__` directory
+- **File Pattern**: `*.test.ts` or `*.spec.ts` files
+
+### Running Tests
+
+1. **Run tests in watch mode**:
+
+   ```bash
+   npm test
+   ```
+
+   This will start Vitest in watch mode, automatically re-running tests when files change.
+
+2. **Run tests with coverage**:
+
+   ```bash
+   npm run test:coverage
+   ```
+
+   This will generate a coverage report showing:
+
+   - Statement coverage
+   - Branch coverage
+   - Function coverage
+   - Line coverage
+
+3. **Run specific test file**:
+   ```bash
+   npm test src/__tests__/utils.test.ts
+   ```
+
+### Test Structure
+
+Tests are organized in the `src/__tests__` directory with the following structure:
+
+```
+src/
+  __tests__/
+    utils.test.ts      # Utility function tests
+```
+
+### Writing Tests
+
+Example of a test file structure:
+
+```typescript
+import { describe, it, expect } from 'vitest';
+import { formatCurrency } from '../utils';
+
+describe('formatCurrency', () => {
+  it('should format a number with pound symbol', () => {
+    expect(formatCurrency(100)).toBe('£100');
+  });
+
+  it('should handle undefined values', () => {
+    expect(formatCurrency(undefined)).toBe('£0');
+  });
+});
+```
+
+### Test Coverage
+
+The project maintains a high test coverage with:
+
+- Unit tests for utility functions
+- Component tests for UI elements
+- Integration tests for key features
+- Coverage reports in HTML, JSON, and text formats
 
 ## 📧 Contact
 
