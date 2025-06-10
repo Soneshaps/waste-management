@@ -6,7 +6,7 @@ A modern web application for efficient waste management and skip hire services. 
 
 ### Sandbox URL
 
-Sandbox URL for the application: [Rem-Waste Sandbox URL](https://codesandbox.io/p/github/Soneshaps/waste-management/main)
+[Rem-Waste Sandbox URL](https://codesandbox.io/p/github/Soneshaps/waste-management/main)
 
 ### Desktop View
 
@@ -37,9 +37,10 @@ _Form validation and error handling_
 
 #### 4. Responsive Design
 
-![Responsive Design - Desktop](https://i.imgur.com/nZEfA8R.png)
-![Responsive Design - Tablet](https://i.imgur.com/13dREyb.png)
-![Responsive Design - Mobile](https://i.imgur.com/v3JFWky.png)
+<img src="https://i.imgur.com/nZEfA8R.png" width="300" alt="Responsive Design - Desktop">
+<img src="https://i.imgur.com/13dREyb.png" width="300" alt="Responsive Design - Tablet">
+<img src="https://i.imgur.com/v3JFWky.png" width="300" alt="Responsive Design - Mobile">
+
 _Seamless experience across all devices_
 
 ## ✨ Features
@@ -165,20 +166,11 @@ This project uses Vitest for testing, which provides a fast and modern testing e
    npm test
    ```
 
-   This will start Vitest in watch mode, automatically re-running tests when files change.
-
 2. **Run tests with coverage**:
 
    ```bash
    npm run test:coverage
    ```
-
-   This will generate a coverage report showing:
-
-   - Statement coverage
-   - Branch coverage
-   - Function coverage
-   - Line coverage
 
 3. **Run specific test file**:
    ```bash
@@ -213,15 +205,6 @@ describe('formatCurrency', () => {
   });
 });
 ```
-
-### Test Coverage
-
-The project maintains a high test coverage with:
-
-- Unit tests for utility functions
-- Component tests for UI elements
-- Integration tests for key features
-- Coverage reports in HTML, JSON, and text formats
 
 ## 📧 Contact
 
