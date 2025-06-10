@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { useSkips } from '@/hooks/useSkips';
+import { useButtonContext } from '@/context/ButtonContext';
 import { useSelectedSkipContext } from '@/context/SelectedSkipContext';
 
 import Title from '@/components/title';
@@ -9,6 +10,7 @@ import SkipDetail from '@/components/skip-detail';
 import SelectSkipInput from '@/components/select-skip-input';
 
 const ChooseSkip: React.FC = () => {
+  const { setDisabled } = useButtonContext();
   const { selectedSkip } = useSelectedSkipContext();
   const { data: skips, isLoading } = useSkips('NR32', 'Lowestoft');
 
@@ -22,6 +24,13 @@ const ChooseSkip: React.FC = () => {
   useEffect(() => {
     scrollToBottom();
   }, [selectedSkip]);
+
+  // Cleanup function
+  useEffect(() => {
+    return () => {
+      setDisabled(false);
+    };
+  }, []);
 
   return (
     <>

@@ -35,7 +35,7 @@ const MainPage: React.FC = () => {
 
     // Validation
     // TODO: Use react-hook-form to validate the form
-    if (selectedSkip === null) {
+    if (activeStep === 2 && selectedSkip === null) {
       setDisabled(true);
       return;
     }
@@ -69,7 +69,7 @@ const MainPage: React.FC = () => {
               onClick={() => setActiveStep(activeStep - 1)}
               variant="secondary"
             >
-              Previous
+              Back
             </CustomButton>
             <CustomButton
               disabled={activeStep === 5 || disabled}
