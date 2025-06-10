@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatCurrency, totalPrice } from './index';
+import { formatCurrency, totalPrice } from '../utils';
 
 describe('formatCurrency', () => {
   it('should format a number with pound symbol', () => {
