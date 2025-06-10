@@ -32,13 +32,13 @@ export const ActiveStateToTitleMap = {
 };
 
 export const ActiveStateToCapacityMap = {
-  4: 'Approximately 45 Black Bin Bags',
-  6: 'Approximately 65 Black Bin Bags',
-  8: 'Approximately 80 Black Bin Bags',
-  10: 'Approximately 100 Black Bin Bags',
-  12: 'Approximately 120 Black Bin Bags',
-  14: 'Approximately 145 Black Bin Bags',
-  16: 'Approximately 170 Black Bin Bags',
-  20: 'Approximately 220 Black Bin Bags',
-  40: 'Approximately 400 Black Bin Bags',
+  4: 'Approx. 45 Black Bin Bags',
+  6: 'Approx. 65 Black Bin Bags',
+  8: 'Approx. 80 Black Bin Bags',
+  10: 'Approx. 100 Black Bin Bags',
+  12: 'Approx. 120 Black Bin Bags',
+  14: 'Approx. 145 Black Bin Bags',
+  16: 'Approx. 170 Black Bin Bags',
+  20: 'Approx. 220 Black Bin Bags',
+  40: 'Approx. 400 Black Bin Bags',
 };
