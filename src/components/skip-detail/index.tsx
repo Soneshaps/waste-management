@@ -3,7 +3,11 @@ import Card from '@/components/card';
 import { formatCurrency, totalPrice } from '@/utils';
 
 import type { Skip } from '@/types/Skip';
-import { SkipSizeToDimensionMap, SkipSizeToImageMap } from '@/constants/constantMap';
+import {
+  ActiveStateToCapacityMap,
+  SkipSizeToDimensionMap,
+  SkipSizeToImageMap,
+} from '@/constants/constantMap';
 
 interface SkipDetailProps {
   selectedSkip: Skip;
@@ -31,7 +35,12 @@ const SkipDetail = ({ selectedSkip }: SkipDetailProps) => {
             label="Dimensions"
             value={SkipSizeToDimensionMap[selectedSkip.size as keyof typeof SkipSizeToImageMap]}
           />
-          <SkipDetailList label="Capacity" value="35 to 40 bin bags" />
+          <SkipDetailList
+            label="Capacity"
+            value={
+              ActiveStateToCapacityMap[selectedSkip.size as keyof typeof ActiveStateToCapacityMap]
+            }
+          />
           <SkipDetailList label="Hire Period" value={`${selectedSkip.hire_period_days} Days`} />
           <SkipDetailList
             label="Allow Heavy Waste"
