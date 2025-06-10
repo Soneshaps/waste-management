@@ -35,10 +35,11 @@ const MainPage: React.FC = () => {
         </div>
 
         {/* Mobile Stepper */}
-        <div className="bg-top-to-bottom block md:hidden pt-6 sticky top-0 z-1">
+        <div className="bg-top-to-bottom block md:hidden pt-4 sticky top-0 z-1">
           <ProgressMobileStepper activeStep={activeStep} />
         </div>
 
+        {/*Dynamic Main Content */}
         <div className="max-w-[1000px] mx-auto px-8 pb-24">
           {activeStepToComponentMap[activeStep as keyof typeof activeStepToComponentMap]}
         </div>

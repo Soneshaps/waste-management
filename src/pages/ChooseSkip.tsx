@@ -49,6 +49,7 @@ const ChooseSkip: React.FC = () => {
             selectedSkip={selectedSkip}
             setSelectedSkip={setSelectedSkip}
           />
+
           {selectedSkip && <SkipDetail selectedSkip={selectedSkip} />}
         </>
       )}

@@ -41,7 +41,7 @@ interface CustomStepperProps {
 export default function ProgressMobileStepper({ activeStep }: CustomStepperProps) {
   return (
     <div>
-      <div className="px-4 flex items-center gap-4 mb-4">
+      <div className="px-4 flex items-center gap-4 mb-2">
         <div className="w-14 h-14 rounded-full border-2 border-[#4645cb] flex items-center justify-center">
           <div className="relative w-12 h-12 flex items-center justify-center rounded-full bg-[#4645cb] text-white">
             {ActiveStateToIconMap[activeStep as keyof typeof ActiveStateToIconMap]}
