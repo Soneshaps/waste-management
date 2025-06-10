@@ -1,7 +1,9 @@
-import type { Skip } from '@/types/Skip';
 import Card from '@/components/card';
+
+import { formatCurrency, totalPrice } from '@/utils';
+
+import type { Skip } from '@/types/Skip';
 import { SkipSizeToDimensionMap, SkipSizeToImageMap } from '@/constants/constantMap';
-import { formatCurrency } from '@/utils';
 
 interface SkipDetailProps {
   selectedSkip: Skip;
@@ -21,7 +23,7 @@ const SkipDetail = ({ selectedSkip }: SkipDetailProps) => {
       <div className="flex flex-col gap-1 flex-1">
         <div className="text-xl font-medium">{selectedSkip.size} Yard Skip</div>
         <div className="text-lg font-medium text-gray-500">
-          {formatCurrency(selectedSkip.price_before_vat)}
+          {formatCurrency(totalPrice(selectedSkip.price_before_vat, selectedSkip.vat))}
         </div>
         <hr className="border-gray-200" />
         <div className="text-sm  text-gray-500 pt-2 flex flex-col gap-2">
