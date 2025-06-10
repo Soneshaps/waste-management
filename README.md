@@ -1,54 +1,119 @@
-# React + TypeScript + Vite
+# Rem-Waste: Smart Waste Management Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for efficient waste management and skip hire services. This platform helps users find and book appropriate skip sizes for their waste disposal needs.
 
-Currently, two official plugins are available:
+## 🎥 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Add your demo video or screenshots here]
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Smart Skip Selection**: Choose the perfect skip size based on your waste disposal needs
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **User-Friendly Interface**: Clean and modern UI for better user experience
+- **Guided Booking Process**:
+  - Interactive stepper interface for both desktop and mobile
+  - Clear progress indication through booking steps
+  - Responsive stepper design adapts to screen size
+- **Data Persistence**:
+  - Form data persists across component navigation
+  - Seamless user experience with no data loss
+  - State management across the entire booking flow
+- **Validation & Flow Control**:
+  - Skip size selection required before proceeding
+  - Guided user journey prevents incomplete submissions
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🎨 Design Approach
+
+### Inspiration & UI/UX Decisions
+
+- **Stepper Design**: Inspired by [Dribbble Stepper Components](https://dribbble.com/shots/14012793-Stepper-Components)
+
+  - Clean and intuitive step navigation
+  - Visual progress indication
+  - Seamless transitions between steps
+
+- **Skip Selection UI**: Inspired by [Nike Sneakers Product Card](https://dribbble.com/shots/26028875-Nike-Sneakers-Product-Card-Dark-Light-UI)
+  - Improved user focus on selected skip
+
+### UX Improvements
+
+- **Streamlined Skip Selection**:
+
+  - Replaced overwhelming list view with focused card-based display
+  - Clear presentation of skip information after selection
+  - Reduced cognitive load for users
+
+- **Enhanced Mobile Experience**:
+
+  - Smooth scroll transitions to skip details
+  - Optimized layout for mobile devices
+  - Intuitive navigation between steps
+
+- **Progressive Disclosure**:
+  - Step-by-step information presentation
+  - Clear validation feedback
+  - Guided user journey with enabled/disabled states
+
+## 🛠️ Technology Used
+
+- **Frontend Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **State Management**: React Hooks
+- **Type Safety**: TypeScript
+- **Code Quality**: ESLint
+- **Development Tools**:
+  - Fast Refresh for quick development
+  - Path aliases for clean imports
+  - Modern JavaScript features
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/rem-waste.git
+   cd rem-waste
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and visit `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+# or
+yarn build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+[Add your license information here]
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📧 Contact
+
+[sonesh.aps@gmail.com]
