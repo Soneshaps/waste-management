@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import { getSkipsByLocation } from '../services/skipService';
+
+import { getSkipsByLocation } from '@/services/skipService';
 
 export const useSkips = (postcode: string, area: string) => {
   return useQuery({

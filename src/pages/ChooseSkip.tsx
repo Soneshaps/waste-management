@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
-import { useSkips } from '../hooks/useSkips';
-import Title from '../components/title';
-import SelectSkipInput from '../components/select-skip-input';
-import SkipDetail from '../components/skip-detail';
-import Loader from '../components/loader';
-import { useButtonContext } from '../context/ButtonContext';
-import { useSelectedSkipContext } from '../context/SelectedSkipContext';
+
+import { useSkips } from '@/hooks/useSkips';
+import { useButtonContext } from '@/context/ButtonContext';
+import { useSelectedSkipContext } from '@/context/SelectedSkipContext';
+
+import Title from '@/components/title';
+import Loader from '@/components/loader';
+import SkipDetail from '@/components/skip-detail';
+import SelectSkipInput from '@/components/select-skip-input';
 
 const ChooseSkip: React.FC = () => {
   const { selectedSkip, setSelectedSkip } = useSelectedSkipContext();

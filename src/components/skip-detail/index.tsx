@@ -1,5 +1,5 @@
-import type { Skip } from '../../services/skipService';
-import Card from '../card';
+import type { Skip } from '@/types/Skip';
+import Card from '@/components/card';
 
 const SkipSizeToImageMap = {
   4: '/images/4-yard-skip.jpg',

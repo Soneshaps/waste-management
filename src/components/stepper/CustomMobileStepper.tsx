@@ -1,11 +1,13 @@
-import MobileStepper from '@mui/material/MobileStepper';
 import { css } from '@emotion/react';
-import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+
+import MobileStepper from '@mui/material/MobileStepper';
+
 import DeleteIcon from '@mui/icons-material/Delete';
 import PaymentIcon from '@mui/icons-material/Payment';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const progressStyle = css`
   position: relative;

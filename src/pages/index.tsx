@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import ChooseSkip from './ChooseSkip';
-import ProgressMobileStepper from '../components/stepper/CustomMobileStepper';
-import CustomStepper from '../components/stepper/CustomStepper';
-import CustomButton from '../components/button';
-import Address from './Address';
-import ChooseDate from './ChooseDate';
-import WasteType from './WasteType';
-import Payment from './Payment';
-import PermitCheck from './PermitCheck';
-import { useButtonContext } from '../context/ButtonContext';
+
+import { useButtonContext } from '@/context/ButtonContext';
+
+import CustomButton from '@/components/button';
+import CustomStepper from '@/components/stepper/CustomStepper';
+import ProgressMobileStepper from '@/components/stepper/CustomMobileStepper';
+
+import Payment from '@/pages/Payment';
+import Address from '@/pages/Address';
+import WasteType from '@/pages/WasteType';
+import ChooseSkip from '@/pages/ChooseSkip';
+import ChooseDate from '@/pages/ChooseDate';
+import PermitCheck from '@/pages/PermitCheck';
 
 const activeStepToComponentMap = {
   0: <Address />,

@@ -1,4 +1,4 @@
-import type { Skip } from '../../services/skipService';
+import type { Skip } from '@/services/skipService';
 
 interface SelectSkipInputProps {
   skips: Skip[];

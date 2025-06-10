@@ -1,7 +1,9 @@
-import { ButtonProvider } from './context/ButtonContext';
-import { SelectedSkipProvider } from './context/SelectedSkipContext';
-import MainPage from './pages';
+import { ButtonProvider } from '@/context/ButtonContext';
+import { SelectedSkipProvider } from '@/context/SelectedSkipContext';
+
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+
+import MainPage from '@/pages';
 
 const theme = createTheme({
   palette: {
