@@ -10,30 +10,36 @@ Sandbox URL for the application: [Rem-Waste Sandbox URL](https://codesandbox.io/
 
 ### Desktop View
 
-[[Watch Demo Video for Webpage]](https://vimeo.com/1092041247)
+[[Watch Demo Video for Webpage]](https://vimeo.com/1092162788)
 _Clean and intuitive interface for desktop users_
 
 ### Mobile View
 
-[[Watch Demo Video for Mobile]](https://vimeo.com/1092041271)
+[[Watch Demo Video for Mobile]](https://vimeo.com/1092162839/dd33e44484)
 _Responsive design optimized for mobile devices_
 
 ### Key Features Showcase
 
 #### 1. Skip Selection
 
-![Skip Selection](https://i.imgur.com/cSNNDKs.png)
+![Skip Selection](https://i.imgur.com/5hYNOZt.png)
 _Interactive skip size selection with detailed information_
 
 #### 2. Skip Details
 
-![Skip Details](https://i.imgur.com/2NMoJ5o.png)
+![Skip Details](https://i.imgur.com/7ZUYrmt.png)
+_Skip detail Sectio_
+
+#### 3. Validation
+
+![Skip Validaton](https://i.imgur.com/7xwF0DK.png)
 _Skip detail Sectio_
 
 #### 3. Responsive Design
 
-![Responsive Design](https://i.imgur.com/tcPMc6l.png)
-![Responsive Design](https://i.imgur.com/Me8Bguq.png)
+![Responsive Design](https://i.imgur.com/nZEfA8R.png)
+![Responsive Design](https://i.imgur.com/13dREyb.png)
+![Responsive Design](https://i.imgur.com/v3JFWky.png)
 _Seamless experience across all devices_
 
 ## ✨ Features
