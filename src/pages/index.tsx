@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { useButtonContext } from '@/context/ButtonContext';
+import { useSelectedSkipContext } from '@/context/SelectedSkipContext';
 
 import CustomButton from '@/components/button';
 import CustomStepper from '@/components/stepper/CustomStepper';
@@ -24,7 +25,23 @@ const activeStepToComponentMap = {
 
 const MainPage: React.FC = () => {
   const [activeStep, setActiveStep] = useState(2);
-  const { disabled } = useButtonContext();
+  const { disabled, setDisabled } = useButtonContext();
+  const { selectedSkip } = useSelectedSkipContext();
+
+  const handleNext = () => {
+    if (activeStep === 5) {
+      return;
+    }
+
+    // Validation
+    // TODO: Use react-hook-form to validate the form
+    if (selectedSkip === null) {
+      setDisabled(true);
+      return;
+    }
+
+    setActiveStep(activeStep + 1);
+  };
 
   return (
     <div className="min-h-screen bg-bottom-to-top">
@@ -56,7 +73,7 @@ const MainPage: React.FC = () => {
             </CustomButton>
             <CustomButton
               disabled={activeStep === 5 || disabled}
-              onClick={() => setActiveStep(activeStep + 1)}
+              onClick={handleNext}
               variant="primary"
             >
               Next

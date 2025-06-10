@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
 import { useSkips } from '@/hooks/useSkips';
-import { useButtonContext } from '@/context/ButtonContext';
 import { useSelectedSkipContext } from '@/context/SelectedSkipContext';
 
 import Title from '@/components/title';
@@ -10,9 +9,8 @@ import SkipDetail from '@/components/skip-detail';
 import SelectSkipInput from '@/components/select-skip-input';
 
 const ChooseSkip: React.FC = () => {
-  const { selectedSkip, setSelectedSkip } = useSelectedSkipContext();
+  const { selectedSkip } = useSelectedSkipContext();
   const { data: skips, isLoading } = useSkips('NR32', 'Lowestoft');
-  const { setDisabled } = useButtonContext();
 
   const scrollToBottom = () => {
     window.scrollTo({
@@ -23,14 +21,6 @@ const ChooseSkip: React.FC = () => {
 
   useEffect(() => {
     scrollToBottom();
-  }, [selectedSkip]);
-
-  useEffect(() => {
-    setDisabled(selectedSkip === null);
-
-    return () => {
-      setDisabled(false);
-    };
   }, [selectedSkip]);
 
   return (
@@ -44,11 +34,7 @@ const ChooseSkip: React.FC = () => {
         <Loader />
       ) : (
         <>
-          <SelectSkipInput
-            skips={skips ?? []}
-            selectedSkip={selectedSkip}
-            setSelectedSkip={setSelectedSkip}
-          />
+          <SelectSkipInput skips={skips ?? []} />
 
           {selectedSkip && <SkipDetail selectedSkip={selectedSkip} />}
         </>
