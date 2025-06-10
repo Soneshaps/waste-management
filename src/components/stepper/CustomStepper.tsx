@@ -19,7 +19,14 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationPinIcon from '@mui/icons-material/LocationPin';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 
-export const steps = ['Address', 'Waste Type', 'Select Skip', 'Permit Check', 'Choose Dates', 'Payment'];
+export const steps = [
+  'Address',
+  'Waste Type',
+  'Select Skip',
+  'Permit Check',
+  'Choose Dates',
+  'Payment',
+];
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -70,11 +77,11 @@ const ColorlibStepIconRoot = styled('div')<{
       style: {
         backgroundImage:
           'linear-gradient( 136deg, rgb(70, 69, 203) 0%, rgb(70, 69, 203) 50%, rgb(70, 69, 203) 100%)',
-          boxShadow: `
+        boxShadow: `
       0 0 0 6px white,      /* gap between content and border */
       0 0 0 8px #4645cb,   /* thick colored border */
       0 4px 10px 0 rgba(0,0,0,.25)
-    `
+    `,
       },
     },
     {
@@ -112,32 +119,53 @@ interface CustomStepperProps {
 }
 
 const CustomStepper: React.FC<CustomStepperProps> = ({ activeStep, setActiveStep }) => {
+  const handleStepClick = (index: number) => {
+    if (index < activeStep) {
+      setActiveStep(index);
+    }
+  };
+
   return (
     <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
       {steps.map((label, index) => (
-        <Step disabled={index > activeStep} key={label} onClick={() => {
-          // if (index < activeStep) {
-            setActiveStep(index)
-          // }
-          }}>
+        <Step
+          className="cursor-pointer"
+          disabled={index > activeStep}
+          key={label}
+          onClick={() => handleStepClick(index)}
+        >
           <StepLabel StepIconComponent={ColorlibStepIcon}>
-            <Typography variant='caption' color="text.secondary" >
+            <Typography variant="caption" color="text.secondary">
               {`Step ${index + 1}`}
             </Typography>
-            <Typography variant='body2' color="text.primary" fontWeight={600} style={{ marginTop: '4px', color: index != activeStep ? '#959796' : '#121715' }}>
+
+            <Typography
+              variant="body2"
+              color="text.primary"
+              fontWeight={600}
+              style={{ marginTop: '4px', color: index != activeStep ? '#959796' : '#121715' }}
+            >
               {label}
             </Typography>
-            <Chip variant={index > activeStep ? 'outlined' : 'filled'} label={activeStep === index ? 'In Progress' : index > activeStep ? 'Pending' : 'Completed'} 
-            style={
-              { backgroundColor: activeStep === index ? '#f0f0ff' : index > activeStep ? '#ffffff' : '#edf9f0',
-               color: activeStep === index ? '#493aaf' : index > activeStep ?   '#d8d8d8' : '#1abe73',
-               padding: '0px 6px',
-               fontSize: '12px',
-               marginTop: '12px',
-               borderColor: index > activeStep ? '#e7e7e7' : 'none',
-               fontWeight: 600
+
+            <Chip
+              variant={index > activeStep ? 'outlined' : 'filled'}
+              label={
+                activeStep === index ? 'In Progress' : index > activeStep ? 'Pending' : 'Completed'
+              }
+              style={{
+                backgroundColor:
+                  activeStep === index ? '#f0f0ff' : index > activeStep ? '#ffffff' : '#edf9f0',
+                color:
+                  activeStep === index ? '#493aaf' : index > activeStep ? '#d8d8d8' : '#1abe73',
+                padding: '0px 6px',
+                fontSize: '12px',
+                marginTop: '12px',
+                borderColor: index > activeStep ? '#e7e7e7' : 'none',
+                fontWeight: 600,
               }}
-            size='small' />
+              size="small"
+            />
           </StepLabel>
         </Step>
       ))}
@@ -145,4 +173,4 @@ const CustomStepper: React.FC<CustomStepperProps> = ({ activeStep, setActiveStep
   );
 };
 
-export default CustomStepper; 
+export default CustomStepper;

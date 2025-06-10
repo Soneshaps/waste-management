@@ -1,3 +1,5 @@
+import { ButtonProvider } from './context/ButtonContext';
+import { SelectedSkipProvider } from './context/SelectedSkipContext';
 import MainPage from './pages';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 
@@ -16,7 +18,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <MainPage />
+      <ButtonProvider>
+        <SelectedSkipProvider>
+          <MainPage />
+        </SelectedSkipProvider>
+      </ButtonProvider>
     </ThemeProvider>
   );
 }
