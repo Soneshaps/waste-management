@@ -15,7 +15,7 @@ _Clean and intuitive interface for desktop users_
 
 ### Mobile View
 
-[[Watch Demo Video for Mobile]](https://vimeo.com/1092041247)
+[[Watch Demo Video for Mobile]](https://vimeo.com/1092041271)
 _Responsive design optimized for mobile devices_
 
 ### Key Features Showcase
