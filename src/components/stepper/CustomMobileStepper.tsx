@@ -9,6 +9,8 @@ import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
+import { ActiveStateToTitleMap } from '@/constants/constantMap';
+
 const progressStyle = css`
   position: relative;
   overflow: hidden;
@@ -22,15 +24,6 @@ const progressStyle = css`
 const progressActiveStyle = css`
   background-color: #4645cb;
 `;
-
-const ActiveStateToTitleMap = {
-  0: 'Address',
-  1: 'Waste Type',
-  2: 'Skip Size',
-  3: 'Permit Check',
-  4: 'Choose Date',
-  5: 'Payment',
-};
 
 const ActiveStateToIconMap = {
   0: <LocationPinIcon />,
